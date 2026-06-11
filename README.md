@@ -1,8 +1,17 @@
 # HackedServer — Защита от читов в Minecraft
 
+<div align="center">
+
 [![Version](https://img.shields.io/badge/version-3.16.1-blue.svg)](https://github.com/Mukller/Hackedserver-)
-[![License](https://img.shields.io/badge/license-Proprietary-red.svg)](LICENSE.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-purple?style=flat-square)](LICENSE.md)
+[![Minecraft](https://img.shields.io/badge/Minecraft-1.8%2B-green?style=flat-square)](https://minecraft.net)
+[![maintained](https://img.shields.io/badge/maintained%3F-yes-green?style=flat-square)](https://github.com/Mukller/Hackedserver-)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen?style=flat-square)](CONTRIBUTING.md)
 [![Status](https://img.shields.io/badge/status-Active-brightgreen.svg)]()
+
+[English](README_EN.md) • Русский
+
+</div>
 
 **HackedServer** — премиум-плагин для Minecraft серверов, обеспечивающий защиту от читов и неавторизованных модификаций через анализ пакетов данных.
 
