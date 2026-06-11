@@ -1,8 +1,17 @@
 # HackedServer — Anti-Cheat Protection for Minecraft
 
+<div align="center">
+
 [![Version](https://img.shields.io/badge/version-3.16.1-blue.svg)](https://github.com/Mukller/Hackedserver-)
-[![License](https://img.shields.io/badge/license-Proprietary-red.svg)](LICENSE.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-purple?style=flat-square)](LICENSE.md)
+[![Minecraft](https://img.shields.io/badge/Minecraft-1.8%2B-green?style=flat-square)](https://minecraft.net)
+[![maintained](https://img.shields.io/badge/maintained%3F-yes-green?style=flat-square)](https://github.com/Mukller/Hackedserver-)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen?style=flat-square)](CONTRIBUTING.md)
 [![Status](https://img.shields.io/badge/status-Active-brightgreen.svg)]()
+
+Русский • [English](README_EN.md)
+
+</div>
 
 **HackedServer** is a premium plugin for Minecraft servers that provides protection against cheats and unauthorized modifications through packet-based analysis.
 
