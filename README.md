@@ -6,28 +6,8 @@
 
 </div>
 
----
-
-<input type="radio" id="lang-en" name="language" checked style="display:none;">
-<input type="radio" id="lang-ru" name="language" style="display:none;">
-
-<div style="text-align: center; margin: 20px 0;">
-  <label for="lang-en" style="display: inline-block; padding: 12px 24px; background: #58A6FF; color: white; border-radius: 6px 0 0 6px; cursor: pointer; font-weight: bold; margin-right: -4px; user-select: none;">English</label><label for="lang-ru" style="display: inline-block; padding: 12px 24px; background: #30363D; color: white; border-radius: 0 6px 6px 0; cursor: pointer; font-weight: bold; user-select: none;">Русский</label>
-</div>
-
-<style>
-  input[type="radio"] { display: none !important; }
-  #lang-en:checked ~ div.lang-en { display: block; }
-  #lang-en:checked ~ div.lang-ru { display: none; }
-  #lang-ru:checked ~ div.lang-en { display: none; }
-  #lang-ru:checked ~ div.lang-ru { display: block; }
-  .lang-en { display: block; }
-  .lang-ru { display: none; }
-</style>
-
----
-
-<div class="lang-en">
+<details open>
+<summary><strong>📖 English</strong></summary>
 ## English Version
 
 
@@ -46,147 +26,10 @@
 
 Русский • [English](README_EN.md)
 
-</div>
+</details>
 
-**HackedServer** is a premium plugin for Minecraft servers that provides protection against cheats and unauthorized modifications through packet-based analysis.
-
-## 🎯 Key Features
-
-- **Real-time Packet Analysis** — Detects suspicious activity when players connect
-- **Anti-Cheat Protection** — Blocks popular cheating software
-- **Mod Detection** — Identifies unauthorized client modifications
-- **Automated Responses** — Customizable actions upon violation detection
-- **Event Logging** — Comprehensive recording of all suspicious activities
-- **Optimized Performance** — Minimal server performance impact
-
-## 📦 Requirements
-
-- **Minecraft Version:** 1.8 - 1.21.x
-- **Server Software:** Spigot, Paper, Purpur or compatible
-- **Java Version:** Java 8 and above
-
-## 🚀 Installation
-
-1. Download the latest `hackedserver-3.16.1.jar` file
-2. Place it in your server's `plugins/` folder
-3. Restart your server using `/reload` command
-4. Plugin is ready to use!
-
-```bash
-# Server reload command
-/reload
-```
-
-## ⚙️ Configuration
-
-After the first run, the plugin creates a `config.yml` file in `plugins/HackedServer/`.
-
-### Main Parameters:
-
-```yaml
-# Enable the plugin
-enabled: true
-
-# Detection mode (STRICT, NORMAL, PERMISSIVE)
-detection-mode: NORMAL
-
-# Log events to file
-log-events: true
-
-# Notify admins about suspicious activity
-notify-admins: true
-
-# Action on cheat detection (KICK, BAN, WARN)
-action-on-detect: KICK
-```
-
-## 🎮 Commands
-
-| Command | Description | Permission |
-|---------|-------------|-----------|
-| `/hs reload` | Reload plugin configuration | `hackedserver.admin` |
-| `/hs status` | Display plugin status | `hackedserver.status` |
-| `/hs check <player>` | Check specific player | `hackedserver.check` |
-| `/hs logs` | View event logs | `hackedserver.logs` |
-
-## 📋 Permissions
-
-```
-hackedserver.admin        # Full access to admin commands
-hackedserver.status       # View plugin status
-hackedserver.check        # Check players
-hackedserver.logs         # View logs
-hackedserver.bypass       # Bypass cheat detection
-```
-
-## 🐛 Detected Cheats
-
-- Aimbot and aim assistance
-- Speed hack (movement acceleration)
-- Fly hack (flying)
-- Noclip (phase through blocks)
-- Damage hack (damage modification)
-- Killaura and extended range attacks
-- Reach hack (increased attack radius)
-- Anti-knockback
-
-## 📊 Statistics and Logging
-
-All events are logged to `plugins/HackedServer/logs/events.log` for analysis:
-
-```
-[2024-05-14 10:30:45] Player: Steve | Detection: Aimbot | Action: KICKED
-[2024-05-14 10:31:12] Player: Alex | Detection: Speed Hack | Action: WARNED
-```
-
-## 🔧 Technical Support
-
-If you encounter issues:
-
-1. Check Minecraft version compatibility
-2. Verify configuration file validity
-3. Check server logs in `logs/latest.log`
-4. Create an issue with detailed description
-
-## 📈 Updates and Versions
-
-Current Version: **3.16.1**
-
-To stay updated:
-- Review [CHANGELOG.md](CHANGELOG.md)
-- Watch releases on GitHub
-- Join our community
-
-## 📜 License
-
-This project is protected by a proprietary license. See [LICENSE.md](LICENSE.md) for details.
-
-## 🤝 Contributing
-
-We welcome bug reports and improvement suggestions. See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
-
-## 📝 Code of Conduct
-
-When participating in this project, please follow our [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
-
-## 📞 Contacts
-
-- **Developer:** Mukller
-- **GitHub:** [@Mukller](https://github.com/Mukller)
-- **Issues:** [Create Issue](https://github.com/Mukller/Hackedserver-/issues)
-
----
-
-**Thank you for using HackedServer! 🛡️**
-
----
-
-</div>
-
-<div class=lang-ru>
-
-
-
+<details>
+<summary><strong>📖 Русский</strong></summary>
 
 ## Русская версия
 
@@ -340,3 +183,5 @@ hackedserver.bypass       # Обход защиты от детектирова�
 **Спасибо за использование HackedServer! 🛡️**
 
 </div>
+
+</details>
