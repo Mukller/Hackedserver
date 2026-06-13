@@ -4,10 +4,22 @@
 [![maintained](https://img.shields.io/badge/maintained%3F-yes-green?style=flat-square)](https://github.com/Mukller/Hackedserver)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen?style=flat-square)](CONTRIBUTING.md)
 
+---
+
+## Language / Язык
+
 </div>
 
-<details open>
-<summary><strong>📖 English</strong></summary>
+| **📖 English** | **📖 Русский** |
+|:---:|:---:|
+| Scroll down / Листай вниз | Листай вниз / Scroll down |
+
+---
+
+## English Version
+
+
+
 
 # HackedServer — Anti-Cheat Protection for Minecraft
 
@@ -155,10 +167,12 @@ When participating in this project, please follow our [CODE_OF_CONDUCT.md](CODE_
 
 **Thank you for using HackedServer! 🛡️**
 
-</details>
+---
 
-<details>
-<summary><strong>📖 Русский</strong></summary>
+## Русская версия
+
+
+
 
 # HackedServer — Защита от читов в Minecraft
 
@@ -305,5 +319,3 @@ hackedserver.bypass       # Обход защиты от детектирова�
 ---
 
 **Спасибо за использование HackedServer! 🛡️**
-
-</details>
