@@ -1,420 +1,247 @@
-# Руководство по вкладу в HackedServer
+# Руководство для контрибьютеров
 
-Спасибо за интерес к участию в HackedServer! Это руководство поможет вам внести полезный вклад в проект.
+Спасибо за интерес к проекту! Этот документ описывает процесс внесения вклада.
 
-## Содержание
+## 📋 Содержание
 
 - [Кодекс поведения](#кодекс-поведения)
 - [Как начать](#как-начать)
-- [Типы вкладов](#типы-вкладов)
-- [Процесс разработки](#процесс-разработки)
 - [Стиль кода](#стиль-кода)
+- [Коммиты](#коммиты)
+- [Pull Requests](#pull-requests)
 - [Тестирование](#тестирование)
-- [Процесс Pull Request](#процесс-pull-request)
-- [Комментарии и документация](#комментарии-и-документация)
 
----
+## 🤝 Кодекс поведения
 
-## Кодекс поведения
+Мы придерживаемся принципов вежливости и уважения. Ожидаем того же от всех участников:
 
-Этот проект и все участники регулируются нашим [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md). Участвуя в проекте, вы обязуетесь соблюдать этот кодекс.
+- Будь вежлив и уважителен в общении
+- Принимай конструктивную критику
+- Сосредоточься на том, что лучше для сообщества
+- Проявляй сочувствие к другим участникам
 
----
+## 🚀 Как начать
 
-## Как начать
+### 1. Форкни репозиторий
 
-### Подготовка окружения
+Нажми кнопку **Fork** на странице репозитория.
 
-1. **Fork репозитория**
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/Hackedserver-.git
-   cd Hackedserver-
-   ```
-
-2. **Создайте ветку для своей функции**
-   ```bash
-   git checkout -b feature/название-функции
-   ```
-
-3. **Установите зависимости**
-   ```bash
-   # Убедитесь, что у вас установлена Java 8+
-   java -version
-   
-   # Для компиляции требуется Maven или Gradle
-   mvn --version
-   ```
-
-4. **Создайте локальную среду разработки**
-   ```bash
-   # Скопируйте файл конфигурации
-   cp config.example.yml plugins/HackedServer/config.yml
-   ```
-
-### Первый запуск
+### 2. Клонируй свой форк
 
 ```bash
-# Скомпилируйте проект
-mvn clean package
-
-# Файл JAR будет в target/hackedserver-VERSION.jar
+git clone https://github.com/YOUR_USERNAME/AdvancedSpyInventory.git
+cd AdvancedSpyInventory
 ```
 
----
+### 3. Добавь upstream (оригинальный репозиторий)
 
-## Типы вкладов
-
-### 🐛 Сообщение об ошибках
-
-**Вы нашли баг?** Спасибо! Вот как помочь:
-
-1. **Проверьте существующие issues** — возможно, это уже известная проблема
-2. **Создайте новый issue** с заголовком вида: `[BUG] Описание проблемы`
-3. **Приложите информацию:**
-   ```
-   Версия плагина: 3.16.1
-   Версия Minecraft: 1.20.4
-   Server Software: Paper
-   Java версия: Java 17
-   
-   Как воспроизвести:
-   1. ...
-   2. ...
-   3. ...
-   
-   Ожидаемое поведение: ...
-   Фактическое поведение: ...
-   
-   Логи ошибки:
-   [код ошибки]
-   ```
-
-### 💡 Предложение улучшений
-
-**Есть идея?** Создайте issue с меткой `enhancement`:
-
-1. **Используйте четкое описание** — что вы хотите добавить и почему?
-2. **Приложите примеры** — как это должно работать?
-3. **Обсудите альтернативы** — какие другие решения есть?
-
-Пример:
-```
-Название: [FEATURE] Поддержка WebSocket для реал-тайм мониторинга
-
-Описание:
-Предлагаю добавить WebSocket сервер для мониторинга статуса плагина 
-в реальном времени вместо постоянного опроса через HTTP.
-
-Преимущества:
-- Меньше нагрузки на сервер
-- Быстрее получение обновлений
-- Лучше масштабируемость
-
-Примеры использования:
-[код примера]
-```
-
-### 📚 Улучшение документации
-
-Документация всегда нуждается в улучшении:
-
-1. Исправления опечаток
-2. Уточнение объяснений
-3. Добавление примеров
-4. Переводы на другие языки
-
-### 🔧 Исправления и улучшения кода
-
-Готовы к коду? Отлично! Следуйте процессу ниже.
-
----
-
-## Процесс разработки
-
-### Ветвление (Branching)
-
-Используйте следующие соглашения для имен веток:
-
-```
-feature/название-функции      # Новая функция
-bugfix/описание-ошибки        # Исправление ошибки
-docs/улучшение-документации   # Документация
-refactor/улучшение-кода       # Рефакторинг
-perf/оптимизация             # Оптимизация производительности
-```
-
-Примеры:
 ```bash
-git checkout -b feature/discord-integration
-git checkout -b bugfix/false-positive-detection
-git checkout -b docs/configuration-guide
+git remote add upstream https://github.com/Mukller/AdvancedSpyInventory.git
 ```
 
-### Коммиты (Commits)
+### 4. Создай ветку
 
-Используйте понятные сообщения коммитов:
+```bash
+# Обновись с оригинального репозитория
+git fetch upstream
+git checkout -b feature/description upstream/main
 
-```
-[TYPE] Краткое описание
-
-Более подробное объяснение если необходимо.
-Объясните, что и почему вы изменили.
-
-Связанный issue: #123
+# Или для исправления багов:
+git checkout -b bugfix/description upstream/main
 ```
 
-**Типы коммитов:**
-- `feat:` — новая функция
-- `fix:` — исправление ошибки
-- `docs:` — изменение документации
-- `style:` — форматирование кода
-- `refactor:` — переписывание кода
-- `perf:` — улучшение производительности
-- `test:` — добавление тестов
-- `chore:` — изменение зависимостей
+**Правила именования веток:**
+- `feature/name-of-feature` — новые функции
+- `bugfix/name-of-bug` — исправление ошибок
+- `docs/description` — документация
+- `refactor/description` — рефакторинг кода
 
-Примеры:
-```
-feat: добавить поддержку Discord webhook уведомлений
-fix: исправить ложное срабатывание Aimbot detector
-docs: обновить README с примерами конфигурации
-refactor: переписать систему анализа пакетов
-```
+## 💻 Стиль кода
 
----
-
-## Стиль кода
-
-### Java кодовые соглашения
+### Java код
 
 ```java
-// ✅ Хорошо: понятные имена переменных
-private boolean isPlayerSuspicious(Player player) {
-    int moveDistance = calculateMovementDistance(player);
-    return moveDistance > MAX_ALLOWED_DISTANCE;
-}
+// ✅ ПРАВИЛЬНО
+public class InventoryViewer {
+    private final SpyPlugin plugin;
+    private Player targetPlayer;
 
-// ❌ Плохо: неясные сокращения
-private boolean pSusp(Player p) {
-    int d = calcDist(p);
-    return d > 100;
-}
-```
+    public InventoryViewer(SpyPlugin plugin, Player targetPlayer) {
+        this.plugin = plugin;
+        this.targetPlayer = targetPlayer;
+    }
 
-### Форматирование
-
-- **Отступы:** 4 пробела (не табуляция)
-- **Длина строки:** максимум 100 символов
-- **Скобки:** в стиле Allman
-- **Комментарии:** на русском или английском
-
-```java
-// Правильный стиль скобок
-public void detectCheat(Player player)
-{
-    if (player.isSuspicious())
-    {
-        handleCheater(player);
+    public void openInventory() {
+        if (targetPlayer != null) {
+            // Логика открытия инвентаря
+        }
     }
 }
+
+// ❌ НЕПРАВИЛЬНО
+public class InventoryViewer{
+public final SpyPlugin plugin;
+public Player p;
+public InventoryViewer(SpyPlugin p,Player tp){plugin=p;p=tp;}
+public void open(){if(p!=null){}}
 ```
 
-### Именование
+### Требования к коду
 
-```java
-// Классы: PascalCase
-public class SpeedHackDetector { }
-
-// Методы и переменные: camelCase
-private boolean checkPlayerVelocity(Player player) { }
-private int maxAllowedSpeed = 10;
-
-// Константы: UPPER_SNAKE_CASE
-private static final int MAX_PLAYERS = 1000;
-private static final String CONFIG_PATH = "plugins/HackedServer/";
-```
-
-### Документирование кода
+- Используй **camelCase** для переменных и методов
+- Используй **PascalCase** для классов
+- Максимум **100 символов** в строке
+- Отступ — **4 пробела** (или tab, см. конфиг проекта)
+- Добавляй JavaDoc комментарии к публичным методам:
 
 ```java
 /**
- * Проверяет, использует ли игрок Speed Hack.
+ * Открывает инвентарь целевого игрока для администратора.
  *
- * @param player игрок для проверки
- * @param previousLocation предыдущее местоположение
- * @return true если обнаружен Speed Hack
- * @throws IllegalArgumentException если игрок null
+ * @param admin администратор, просматривающий инвентарь
+ * @param target целевой игрок
+ * @return true если инвентарь успешно открыт, иначе false
  */
-public boolean detectSpeedHack(Player player, Location previousLocation) {
-    // реализация
+public boolean openInventoryForAdmin(Player admin, Player target) {
+    // ...
 }
 ```
 
----
+### YAML конфигурация
 
-## Тестирование
+```yaml
+# ✅ ПРАВИЛЬНО
+plugin:
+  name: "AdvancedSpyInventory"
+  enabled: true
+  
+  settings:
+    # Уведомлять игрока о просмотре инвентаря
+    notify-player: true
+    logging: true
 
-### Юнит-тесты
-
-```java
-public class SpeedHackDetectorTest {
-    
-    private SpeedHackDetector detector;
-    
-    @Before
-    public void setUp() {
-        detector = new SpeedHackDetector();
-    }
-    
-    @Test
-    public void testNormalMovement() {
-        // Тест нормального движения
-        assertFalse(detector.isSuspicious());
-    }
-    
-    @Test
-    public void testFastMovement() {
-        // Тест быстрого движения
-        assertTrue(detector.isSuspicious());
-    }
-}
+# ❌ НЕПРАВИЛЬНО
+plugin:
+name: AdvancedSpyInventory
+enabled: yes
+settings: {notify: true, logging: true}
 ```
 
-### Тестирование на сервере
+## 📝 Коммиты
 
-Перед отправкой PR:
+Используй понятные сообщения коммитов:
 
-1. **Протестируйте на реальном сервере**
-   ```bash
-   # Скопируйте JAR на тестовый сервер
-   cp target/hackedserver-*.jar test-server/plugins/
-   ```
+```bash
+# ✅ ПРАВИЛЬНО
+git commit -m "feat: Add inventory open command with permission checks"
+git commit -m "fix: Correct player offline detection bug"
+git commit -m "docs: Update README with installation instructions"
+git commit -m "refactor: Simplify InventoryManager code"
 
-2. **Убедитесь в совместимости**
-   - Minecraft 1.8 - 1.21.x
-   - Spigot, Paper, Purpur
-   - Java 8+
+# ❌ НЕПРАВИЛЬНО
+git commit -m "fix bug"
+git commit -m "update"
+git commit -m "asdf"
+```
 
-3. **Проверьте логи**
-   ```bash
-   tail -f test-server/logs/latest.log
-   ```
+**Формат:** `<type>: <subject>`
 
----
+**Типы:**
+- `feat` — новая функция
+- `fix` — исправление ошибки
+- `docs` — обновление документации
+- `refactor` — переписывание кода без смены функционала
+- `test` — добавление или обновление тестов
+- `perf` — улучшение производительности
 
-## Процесс Pull Request
+## 🔄 Pull Requests
 
-### Подготовка PR
+### Перед созданием PR
 
-1. **Обновите свою ветку**
-   ```bash
-   git fetch origin
-   git rebase origin/main
-   ```
+1. ✅ Убедись, что код компилируется без ошибок
+2. ✅ Протестируй функцию на игровом сервере
+3. ✅ Обновись с `upstream/main`
+4. ✅ Удали лишние коммиты (`git rebase`)
 
-2. **Протестируйте локально**
-   ```bash
-   mvn clean test
-   mvn package
-   ```
+### Создание PR
 
-3. **Создайте PR** в GitHub с описанием
+```bash
+# Запушь свою ветку
+git push origin feature/your-feature
 
-### Шаблон описания PR
+# Перейди на GitHub и создай Pull Request
+```
+
+### Описание PR
 
 ```markdown
 ## Описание
-Краткое описание изменений и почему они нужны.
+Краткое описание того, что делает PR.
 
 ## Тип изменения
 - [ ] Новая функция
-- [ ] Исправление ошибки
-- [ ] Улучшение документации
-- [ ] Рефакторинг
-
-## Связанные issues
-Closes #123
+- [x] Исправление ошибки
+- [ ] Breaking change
+- [ ] Обновление документации
 
 ## Как это тестировалось?
-Описание процесса тестирования.
+Опишите, как ты тестировал изменения:
+1. Запустил сервер на версии X.X.X
+2. Выполнил команду `/spy PlayerName`
+3. Проверил логи
 
 ## Чек-лист
-- [ ] Я прочитал код других участников
-- [ ] Я добавил тесты для новой функции
-- [ ] Я обновил документацию
-- [ ] Я следовал стилю кода проекта
-- [ ] Я не нарушил функциональность
+- [x] Мой код следует стилю проекта
+- [x] Я провел самопроверку
+- [x] Я обновил документацию (если нужно)
+- [x] Код компилируется без ошибок
 ```
 
-### Процесс рецензирования
+## 🧪 Тестирование
 
-1. **Разработчик рецензирует** ваш код
-2. **Вы исправляете** замечания (если они есть)
-3. **Повторная рецензия**
-4. **Слияние** в main ветку
+### Локальное тестирование
 
-### После слияния
-
-Спасибо за ваш вклад! Ваше имя будет добавлено в:
-- Файл `CONTRIBUTORS.md`
-- Release notes
-- GitHub contributors page
-
----
-
-## Комментарии и документация
-
-### Комментирование кода
-
-```java
-// Плохо: очевидный комментарий
-int x = 5; // присваиваем 5 переменной x
-
-// Хорошо: объясняем почему
-int maxConcurrentChecks = 5; // ограничение для предотвращения избыточной нагрузки на CPU
+1. Скомпилируй плагин:
+```bash
+mvn clean package
+# или gradle build
 ```
 
-### Документирование функций
-
-Каждая публичная функция должна иметь JavaDoc:
-
-```java
-/**
- * Обнаруживает использование читов на основе анализа пакетов.
- *
- * Алгоритм проверяет следующие параметры:
- * - Скорость движения
- * - Точность атак
- * - Отклонение от нормального поведения
- *
- * @param packet сетевой пакет от игрока
- * @return результат анализа (тип чита или CLEAN)
- * @since 3.14.0
- */
-public CheatDetectionResult analyzePacket(NetworkPacket packet) {
-    // реализация
-}
+2. Скопируй JAR в тестовый сервер:
+```bash
+cp target/AdvancedSpyInventory-*.jar ~/test-server/plugins/
 ```
 
+3. Запусти сервер и протестируй функцию
+
+### Что нужно тестировать
+
+- ✅ Команда `/spy <player>` работает
+- ✅ Команда не работает без разрешений
+- ✅ Плагин корректно обрабатывает оффлайн игроков
+- ✅ Конфиг правильно загружается
+- ✅ Нет ошибок в консоли
+
+## 📖 Документация
+
+При добавлении новой функции обновляй документацию:
+
+- **README.md** — основное описание
+- **CHANGELOG.md** — если существует
+- **Inline комментарии** — в самом коде
+
+## ❓ Вопросы?
+
+Если у тебя есть вопросы:
+
+1. Проверь существующие [Issues](https://github.com/Mukller/AdvancedSpyInventory/issues)
+2. Создай новый Issue с пометкой `question`
+3. Обратись в Discussions (если включены)
+
+## 🎉 Спасибо!
+
+Большое спасибо за внесение вклада в проект! Каждый вклад важен для сообщества.
+
 ---
 
-## Помощь и поддержка
-
-Если у вас есть вопросы:
-
-1. **Проверьте документацию** в README и wiki
-2. **Посмотрите существующие PR и issues**
-3. **Создайте discussion** в GitHub Discussions
-4. **Напишите разработчику** [@Mukller](https://github.com/Mukller)
-
----
-
-## Лицензия
-
-Внося вклад в HackedServer, вы соглашаетесь с тем, что ваш код будет распространяться под [Proprietary License](LICENSE.md).
-
----
-
-**Спасибо за ваше внимание и готовность помогать проекту! 🚀**
-
-*Последнее обновление: 14 мая 2024 г.*
+**Happy Coding!** 💻
